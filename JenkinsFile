@@ -19,7 +19,7 @@ pipeline{
       steps {
        
         // build the project and create a JAR file
-        sh 'mvn clean package'
+        sh 'mvn clean install'
       }
     }
     stage('Quality Gate Status Check'){
