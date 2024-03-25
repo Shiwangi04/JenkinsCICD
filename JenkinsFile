@@ -3,7 +3,7 @@ pipeline{
       agent {
         docker {
             image 'maven:3-alpine' 
-            args '-v /root/.m2:/root/.m2' 
+            args '-v $HOME/.m2:/root/.m2'
         }
     }
         
@@ -19,7 +19,7 @@ pipeline{
       steps {
        
         // build the project and create a JAR file
-        sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
+        sh 'mvn clean package'
       }
     }
     stage('Quality Gate Status Check'){
