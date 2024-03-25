@@ -5,12 +5,6 @@ pipeline{
         maven '3.9.6' 
     }
         stages{
-
-              stage('Checkout') {
-      steps {
-        sh 'echo passed'
-      }
-    }
     stage('Build and Test') {
      
       steps {
